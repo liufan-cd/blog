@@ -1,7 +1,9 @@
 ## 简介
 Git是一个免费的、开源的分布式版本控制系统，可以快速高效的处理从小型到大型的各种项目。方便快捷管理所有文件版本。
 
-普通文件通过git add加入追踪，不被追踪的文件不会被git管理。追踪的文件修改，git将改动保存至暂存区，通过git commit提交至本地仓库。本地仓管通过push和pull来和远程仓库进行改动文件交换。
+普通文件修改，git会计算其改动。使用git add可以将改动加入暂存区，使用git commit可以将暂存区改动提交至本地仓库。本地仓管通过push和pull来和远程仓库进行改动交换。
+
+一般ide会在commit的时候，自动将目标使用git add加入暂存区，然后commit。
 
 ![git流程](git流程.png)
 
@@ -12,7 +14,7 @@ Git是一个免费的、开源的分布式版本控制系统，可以快速高�
 [下载地址](https://git-scm.com/download)
 
 ##### 安装git
-一直点是
+打开安装包，一直点是
 
 ##### 工具地址
 [git book](https://git-scm.com/book/zh/v2)
@@ -66,3 +68,9 @@ git仓库添加文件：file为新加文件
 
 指定用户：user为自定义用户
 `git config --global user.name "user"`
+
+重置文件：file_name为文件名
+`git restore file_name`
+
+删除文件：file_name为文件名
+`git rm file_name`
