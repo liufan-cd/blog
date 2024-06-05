@@ -63,6 +63,9 @@ git仓库添加文件：file为新加文件
 推送：origin远程仓库名，可以通过git remote设置别名
 `git push origin`
 
+推送：origin远程仓库名，可以通过git remote设置别名，branch为指定分支
+`git pull origin branche`
+
 指定邮箱：email为自定义邮箱
 `git config --global user.email "email"`
 
