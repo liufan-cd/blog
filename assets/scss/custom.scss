@@ -1,0 +1,27 @@
+#canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none; /* 避免遮挡页面交互 */
+}
+
+/* 暗色主题样式变量 */
+:root[data-scheme="dark"] {
+    --canvas-bg: #3030300f; /* 暗色背景拖影 */
+    --particle-base: rgba(180, 180, 180, var(--alpha)); /* 基础粒子色 */
+    --particle-accent: rgba(120, 160, 220, var(--alpha)); /* 强调粒子色 */
+    --line-particle: rgba(100, 110, 120, var(--opacity)); /* 粒子间连线 */
+    --line-mouse: rgba(100, 180, 255, var(--opacity)); /* 鼠标连线 */
+}
+
+/* 亮色主题样式变量 */
+:root[data-scheme="light"] {
+    --canvas-bg: #f5f5fa0f; /* 亮色背景拖影 */
+    --particle-base: rgba(90, 90, 90, var(--alpha)); /* 基础粒子色 */
+    --particle-accent: rgba(100, 150, 200, var(--alpha)); /* 强调粒子色 */
+    --line-particle: rgba(150, 158, 165, var(--opacity)); /* 粒子间连线 */
+    --line-mouse: rgba(96, 165, 250, var(--opacity)); /* 鼠标连线 */
+}

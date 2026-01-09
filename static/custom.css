@@ -1,0 +1,278 @@
+/* 基础字体设置 - 应用于整个文档 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* 代码块基础样式 */
+.dark .chroma {
+  background-color: #161b22 !important;
+  color: #c9d1d9 !important;
+  border: 1px solid #30363d;
+  /* 代码块专用字体 */
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+}
+
+.dark .chroma .lnt,
+.dark .chroma .ln {
+  color: #8b949e;
+}
+
+/* 语法高亮样式 - 保持元素颜色差异 */
+.dark .chroma .c,
+.dark .chroma .cm,
+.dark .chroma .cp,
+.dark .chroma .c1,
+.dark .chroma .cs,
+.dark .chroma .ch,
+.dark .chroma .cpf { 
+  color: #8b949e; /* 注释 */
+}
+
+/* 关键字 - 区分kr和kt */
+.dark .chroma .k,
+.dark .chroma .kd,
+.dark .chroma .kn,
+.dark .chroma .kp,
+.dark .chroma .kr { 
+  color: #ff7b72; /* kr及相关关键字 */
+}
+
+.dark .chroma .kt { 
+  color: #d2a8ff; /* kt类型关键字 - 单独颜色 */
+}
+
+.dark .chroma .o,
+.dark .chroma .ow { 
+  color: #ff7b72; /* 运算符 */
+}
+
+.dark .chroma .s,
+.dark .chroma .sb,
+.dark .chroma .sc,
+.dark .chroma .dl,
+.dark .chroma .sd,
+.dark .chroma .s2,
+.dark .chroma .se,
+.dark .chroma .sh,
+.dark .chroma .si,
+.dark .chroma .sx,
+.dark .chroma .s1,
+.dark .chroma .ss { 
+  color: #a5d6ff; /* 字符串 */
+}
+
+.dark .chroma .m,
+.dark .chroma .mb,
+.dark .chroma .mf,
+.dark .chroma .mh,
+.dark .chroma .mi,
+.dark .chroma .il,
+.dark .chroma .mo { 
+  color: #a5d6ff; /* 数字 */
+}
+
+.dark .chroma .nf,
+.dark .chroma .fm,
+.dark .chroma .na,
+.dark .chroma .nd,
+.dark .chroma .ne,
+.dark .chroma .nl,
+.dark .chroma .nn { 
+  color: #d2a8ff; /* 函数名和类型名 */
+}
+
+.dark .chroma .nb,
+.dark .chroma .nc,
+.dark .chroma .no,
+.dark .chroma .nv,
+.dark .chroma .vc,
+.dark .chroma .vg,
+.dark .chroma .vi,
+.dark .chroma .bp { 
+  color: #ffa657; /* 变量和内置类型 */
+}
+
+.dark .chroma .nt { 
+  color: #7ee787; /* 标签名 */
+}
+
+.dark .chroma .w { 
+  color: #c9d1d9; /* 空白字符 */
+}
+
+.dark .chroma .p { 
+  color: #c9d1d9; /* 标点符号 */
+}
+
+/* 插入删除样式 */
+.dark .chroma .gd { 
+  color: #ffa198; 
+  background: #490202;
+}
+
+.dark .chroma .gi { 
+  color: #56d364; 
+  background: #033a16;
+}
+
+.dark .chroma .gr,
+.dark .chroma .gt { 
+  color: #f85149; /* 错误 */
+}
+
+.dark .chroma .gh { 
+  color: #79c0ff; 
+}
+
+.dark .chroma .gu { 
+  color: #d2a8ff; 
+}
+
+/* 代码块标题样式 - 使用文档默认字体 */
+.dark div.src-code-block .src-code-block-title {
+  background-color: #161b22;
+  color: #c9d1d9;
+  border-bottom: 1px solid #30363d;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* GitHub Light 风格代码块基础样式 */
+html:not(.dark) .chroma {
+  background-color: #f6f8fa !important;
+  color: #24292f !important;
+  border: 1px solid #d0d7de;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+}
+
+html:not(.dark) .chroma .lnt,
+html:not(.dark) .chroma .ln {
+  color: #6e7781;
+}
+
+/* 注释 */
+html:not(.dark) .chroma .c,
+html:not(.dark) .chroma .cm,
+html:not(.dark) .chroma .cp,
+html:not(.dark) .chroma .c1,
+html:not(.dark) .chroma .cs,
+html:not(.dark) .chroma .ch,
+html:not(.dark) .chroma .cpf {
+  color: #6e7781;
+}
+
+/* 关键字 */
+html:not(.dark) .chroma .k,
+html:not(.dark) .chroma .kd,
+html:not(.dark) .chroma .kn,
+html:not(.dark) .chroma .kp,
+html:not(.dark) .chroma .kr {
+  color: #cf222e;
+}
+html:not(.dark) .chroma .kt {
+  color: #0550ae;
+}
+
+/* 运算符 */
+html:not(.dark) .chroma .o,
+html:not(.dark) .chroma .ow {
+  color: #d73a49;
+}
+
+/* 字符串 */
+html:not(.dark) .chroma .s,
+html:not(.dark) .chroma .sb,
+html:not(.dark) .chroma .sc,
+html:not(.dark) .chroma .dl,
+html:not(.dark) .chroma .sd,
+html:not(.dark) .chroma .s2,
+html:not(.dark) .chroma .se,
+html:not(.dark) .chroma .sh,
+html:not(.dark) .chroma .si,
+html:not(.dark) .chroma .sx,
+html:not(.dark) .chroma .s1,
+html:not(.dark) .chroma .ss {
+  color: #0a3069;
+}
+
+/* 数字 */
+html:not(.dark) .chroma .m,
+html:not(.dark) .chroma .mb,
+html:not(.dark) .chroma .mf,
+html:not(.dark) .chroma .mh,
+html:not(.dark) .chroma .mi,
+html:not(.dark) .chroma .il,
+html:not(.dark) .chroma .mo {
+  color: #0550ae;
+}
+
+/* 函数名和类型名 */
+html:not(.dark) .chroma .nf,
+html:not(.dark) .chroma .fm,
+html:not(.dark) .chroma .na,
+html:not(.dark) .chroma .nd,
+html:not(.dark) .chroma .ne,
+html:not(.dark) .chroma .nl,
+html:not(.dark) .chroma .nn {
+  color: #8250df;
+}
+
+/* 变量和内置类型 */
+html:not(.dark) .chroma .nb,
+html:not(.dark) .chroma .nc,
+html:not(.dark) .chroma .no,
+html:not(.dark) .chroma .nv,
+html:not(.dark) .chroma .vc,
+html:not(.dark) .chroma .vg,
+html:not(.dark) .chroma .vi,
+html:not(.dark) .chroma .bp {
+  color: #953800;
+}
+
+/* 标签名 */
+html:not(.dark) .chroma .nt {
+  color: #116329;
+}
+
+/* 空白字符 */
+html:not(.dark) .chroma .w {
+  color: #24292f;
+}
+
+/* 标点符号 */
+html:not(.dark) .chroma .p {
+  color: #24292f;
+}
+
+/* 插入删除样式 */
+html:not(.dark) .chroma .gd {
+  color: #82071e;
+  background: #ffebe9;
+}
+html:not(.dark) .chroma .gi {
+  color: #116329;
+  background: #dafbe1;
+}
+
+/* 错误 */
+html:not(.dark) .chroma .gr,
+html:not(.dark) .chroma .gt {
+  color: #cf222e;
+}
+
+/* 标题 */
+html:not(.dark) .chroma .gh {
+  color: #0550ae;
+}
+
+/* 统一代码块标题样式 */
+html:not(.dark) div.src-code-block .src-code-block-title {
+  background-color: #f6f8fa;
+  color: #24292f;
+  border-bottom: 1px solid #d0d7de;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* 自定义加宽的prose宽度类 */
+.max-w-prose-wide {
+  max-width: 90ch;
+}

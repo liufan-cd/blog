@@ -1,0 +1,507 @@
+/* Background */
+.chroma {
+    // 【修改】替换 $color 和 $background-color 为深色模式值
+    color: #f8f8f2;
+    background-color: #272822;
+}
+
+/* Other */
+.chroma .x {
+}
+
+/* Error */
+.chroma .err {
+    // 【修改】替换 $error-color 为深色模式错误色
+    color: #f85149;
+}
+
+/* LineTableTD */
+.chroma .lntd {
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+/* LineTable */
+.chroma .lntable {
+    border-spacing: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 100%;
+    display: block;
+
+    > tbody {
+        display: block;
+        width: 100%;
+        > tr {
+            display: flex;
+            width: 100%;
+            > td:last-child {
+                overflow-x: auto;
+            }
+        }
+    }
+}
+
+/* LineHighlight */
+.chroma .hl {
+    display: block;
+    width: 100%;
+    // 【修改】适配深色模式的行高亮背景（原#ffffcc替换为深色适配值）
+    background-color: #2a2e36;
+}
+
+/* LineNumbersTable */
+.chroma .lnt {
+    margin-right: 0.4em;
+    padding: 0 0.4em 0 0.4em;
+    // 【修改】替换行号颜色 #7f7f7f → #8b949e
+    color: #8b949e;
+    display: block;
+}
+
+/* LineNumbers */
+.chroma .ln {
+    margin-right: 0.4em;
+    padding: 0 0.4em 0 0.4em;
+    // 【修改】替换行号颜色 #7f7f7f → #8b949e
+    color: #8b949e;
+}
+
+/* Keyword */
+.chroma .k {
+    // 【修改】替换 $keyword-color → #ff7b72
+    color: #ff7b72;
+}
+
+/* KeywordConstant */
+.chroma .kc {
+    // 【修改】替换 $keyword-color → #ff7b72
+    color: #ff7b72;
+}
+
+/* KeywordDeclaration */
+.chroma .kd {
+    // 【修改】替换 $keyword-color → #ff7b72
+    color: #ff7b72;
+}
+
+/* KeywordNamespace */
+.chroma .kn {
+    // 【修改】替换 #f92672 → #ff7b72
+    color: #ff7b72;
+}
+
+/* KeywordPseudo */
+.chroma .kp {
+    // 【修改】替换 $keyword-color → #ff7b72
+    color: #ff7b72;
+}
+
+/* KeywordReserved */
+.chroma .kr {
+    // 【修改】替换 $keyword-color → #ff7b72
+    color: #ff7b72;
+}
+
+/* KeywordType */
+.chroma .kt {
+    // 【修改】替换 $keyword-color → #d2a8ff（kt单独颜色）
+    color: #d2a8ff;
+}
+
+/* Name */
+.chroma .n {
+    // 【修改】替换 $text-color → #c9d1d9
+    color: #c9d1d9;
+}
+
+/* NameAttribute */
+.chroma .na {
+    // 【修改】替换 $name-color → #d2a8ff
+    color: #d2a8ff;
+}
+
+/* NameBuiltin */
+.chroma .nb {
+    // 【修改】替换 $text-color → #ffa657（变量/内置类型色）
+    color: #ffa657;
+}
+
+/* NameBuiltinPseudo */
+.chroma .bp {
+    // 【修改】替换 $text-color → #ffa657（变量/内置类型色）
+    color: #ffa657;
+}
+
+/* NameClass */
+.chroma .nc {
+    // 【修改】替换 $name-color → #d2a8ff
+    color: #d2a8ff;
+}
+
+/* NameConstant */
+.chroma .no {
+    // 【修改】替换 $keyword-color → #ffa657（变量/内置类型色）
+    color: #ffa657;
+}
+
+/* NameDecorator */
+.chroma .nd {
+    // 【修改】替换 $name-color → #d2a8ff
+    color: #d2a8ff;
+}
+
+/* NameEntity */
+.chroma .ni {
+    // 【修改】替换 $text-color → #c9d1d9
+    color: #c9d1d9;
+}
+
+/* NameException */
+.chroma .ne {
+    // 【修改】替换 $name-color → #d2a8ff
+    color: #d2a8ff;
+}
+
+/* NameFunction */
+.chroma .nf {
+    // 【修改】替换 $name-color → #d2a8ff
+    color: #d2a8ff;
+}
+
+/* NameFunctionMagic */
+.chroma .fm {
+    // 【修改】替换 $text-color → #d2a8ff（函数名色）
+    color: #d2a8ff;
+}
+
+/* NameLabel */
+.chroma .nl {
+    // 【修改】替换 $text-color → #d2a8ff（函数名色）
+    color: #d2a8ff;
+}
+
+/* NameNamespace */
+.chroma .nn {
+    // 【修改】替换 $text-color → #d2a8ff（函数名色）
+    color: #d2a8ff;
+}
+
+/* NameOther */
+.chroma .nx {
+    // 【修改】替换 $name-color → #d2a8ff
+    color: #d2a8ff;
+}
+
+/* NameProperty */
+.chroma .py {
+    // 【修改】替换 $text-color → #c9d1d9
+    color: #c9d1d9;
+}
+
+/* NameTag */
+.chroma .nt {
+    // 【修改】替换 #f92672 → #7ee787（标签名色）
+    color: #7ee787;
+}
+
+/* NameVariable */
+.chroma .nv {
+    // 【修改】替换 $text-color → #ffa657（变量/内置类型色）
+    color: #ffa657;
+}
+
+/* NameVariableClass */
+.chroma .vc {
+    // 【修改】替换 $text-color → #ffa657（变量/内置类型色）
+    color: #ffa657;
+}
+
+/* NameVariableGlobal */
+.chroma .vg {
+    // 【修改】替换 $text-color → #ffa657（变量/内置类型色）
+    color: #ffa657;
+}
+
+/* NameVariableInstance */
+.chroma .vi {
+    // 【修改】替换 $text-color → #ffa657（变量/内置类型色）
+    color: #ffa657;
+}
+
+/* NameVariableMagic */
+.chroma .vm {
+    // 【修改】替换 $text-color → #c9d1d9
+    color: #c9d1d9;
+}
+
+/* Literal */
+.chroma .l {
+    // 【修改】替换 #ae81ff → #a5d6ff（字符串/数字色）
+    color: #a5d6ff;
+}
+
+/* LiteralDate */
+.chroma .ld {
+    // 【修改】替换 $literal-color → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralString */
+.chroma .s {
+    // 【修改】替换 $literal-color → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralStringAffix */
+.chroma .sa {
+    // 【修改】替换 $literal-color → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralStringBacktick */
+.chroma .sb {
+    // 【修改】替换 $literal-color → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralStringChar */
+.chroma .sc {
+    // 【修改】替换 $literal-color → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralStringDelimiter */
+.chroma .dl {
+    // 【修改】替换 $literal-color → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralStringDoc */
+.chroma .sd {
+    // 【修改】替换 $literal-color → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralStringDouble */
+.chroma .s2 {
+    // 【修改】替换 $literal-color → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralStringEscape */
+.chroma .se {
+    // 【修改】替换 #ae81ff → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralStringHeredoc */
+.chroma .sh {
+    // 【修改】替换 $literal-color → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralStringInterpol */
+.chroma .si {
+    // 【修改】替换 $literal-color → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralStringOther */
+.chroma .sx {
+    // 【修改】替换 $literal-color → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralStringRegex */
+.chroma .sr {
+    // 【修改】替换 $literal-color → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralStringSingle */
+.chroma .s1 {
+    // 【修改】替换 $literal-color → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralStringSymbol */
+.chroma .ss {
+    // 【修改】替换 $literal-color → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralNumber */
+.chroma .m {
+    // 【修改】替换 #ae81ff → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralNumberBin */
+.chroma .mb {
+    // 【修改】替换 #ae81ff → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralNumberFloat */
+.chroma .mf {
+    // 【修改】替换 #ae81ff → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralNumberHex */
+.chroma .mh {
+    // 【修改】替换 #ae81ff → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralNumberInteger */
+.chroma .mi {
+    // 【修改】替换 #ae81ff → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralNumberIntegerLong */
+.chroma .il {
+    // 【修改】替换 #ae81ff → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* LiteralNumberOct */
+.chroma .mo {
+    // 【修改】替换 #ae81ff → #a5d6ff
+    color: #a5d6ff;
+}
+
+/* Operator */
+.chroma .o {
+    // 【修改】替换 #f92672 → #ff7b72
+    color: #ff7b72;
+}
+
+/* OperatorWord */
+.chroma .ow {
+    // 【修改】替换 #f92672 → #ff7b72
+    color: #ff7b72;
+}
+
+/* Punctuation */
+.chroma .p {
+    // 【修改】替换 $text-color → #c9d1d9
+    color: #c9d1d9;
+}
+
+/* Comment */
+.chroma .c {
+    // 【修改】替换 #75715e → #8b949e
+    color: #8b949e;
+}
+
+/* CommentHashbang */
+.chroma .ch {
+    // 【修改】替换 #75715e → #8b949e
+    color: #8b949e;
+}
+
+/* CommentMultiline */
+.chroma .cm {
+    // 【修改】替换 #75715e → #8b949e
+    color: #8b949e;
+}
+
+/* CommentSingle */
+.chroma .c1 {
+    // 【修改】替换 #75715e → #8b949e
+    color: #8b949e;
+}
+
+/* CommentSpecial */
+.chroma .cs {
+    // 【修改】替换 #75715e → #8b949e
+    color: #8b949e;
+}
+
+/* CommentPreproc */
+.chroma .cp {
+    // 【修改】替换 #75715e → #8b949e
+    color: #8b949e;
+}
+
+/* CommentPreprocFile */
+.chroma .cpf {
+    // 【修改】替换 #75715e → #8b949e
+    color: #8b949e;
+}
+
+/* Generic */
+.chroma .g {
+}
+
+/* GenericDeleted */
+.chroma .gd {
+    // 【修改】替换 #f92672 → #ffa198，新增背景色
+    color: #ffa198;
+    background: #490202;
+}
+
+/* GenericEmph */
+.chroma .ge {
+    font-style: italic;
+}
+
+/* GenericError */
+.chroma .gr {
+    // 【补充】新增错误色（对应第二段gr/gt）
+    color: #f85149;
+}
+
+/* GenericHeading */
+.chroma .gh {
+    // 【补充】新增gh颜色（对应第二段gh）
+    color: #79c0ff;
+}
+
+/* GenericInserted */
+.chroma .gi {
+    // 【修改】替换 $name-color → #56d364，新增背景色
+    color: #56d364;
+    background: #033a16;
+}
+
+/* GenericOutput */
+.chroma .go {
+}
+
+/* GenericPrompt */
+.chroma .gp {
+}
+
+/* GenericStrong */
+.chroma .gs {
+    font-weight: bold;
+}
+
+/* GenericSubheading */
+.chroma .gu {
+    // 【修改】替换 #75715e → #d2a8ff
+    color: #d2a8ff;
+}
+
+/* GenericTraceback */
+.chroma .gt {
+    // 【补充】新增gt颜色（对应第二段gr/gt）
+    color: #f85149;
+}
+
+/* GenericUnderline */
+.chroma .gl {
+}
+
+/* TextWhitespace */
+.chroma .w {
+    // 【补充】新增w颜色（对应第二段w）
+    color: #c9d1d9;
+}
