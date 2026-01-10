@@ -4,6 +4,12 @@
     flex-direction: column;
     gap: var(--section-separation);
 
+    @include respond(md) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
     article {
         display: flex;
         flex-direction: column;
@@ -13,6 +19,9 @@
         overflow: hidden;
 
         transition: box-shadow 0.3s ease;
+
+        flex-shrink: 0; // 禁止压缩
+        flex-grow: 0;   // 禁止自动增长
 
         &:hover {
             box-shadow: var(--shadow-l2);
@@ -41,6 +50,17 @@
                     color: nth($defaultTagColors, $i);
                 }
             }
+        }
+    }
+
+    .article-column {
+        width: 100%; // 移动端占满
+        display: flex;
+        flex-direction: column;
+        gap: var(--section-separation);
+
+        @include respond(md) {
+            width: calc(50% - (var(--section-separation) / 2)); // 两列均分
         }
     }
 }
