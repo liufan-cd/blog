@@ -1,6 +1,6 @@
 ---
 title: 🥟 markdown语法
-summary: markdown语法汇总
+description: markdown语法汇总
 date: 2025-09-08
 editable: false
 authors:

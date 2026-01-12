@@ -1,6 +1,6 @@
 ---
 title: 🥼 python
-summary: python安装以及使用
+description: python安装以及使用
 date: 2025-08-05
 authors:
   - admin

@@ -1,6 +1,6 @@
 ---
 title: 🚌 JNI
-summary: java本地代码支持
+description: java本地代码支持
 date: 2025-08-05
 authors:
   - admin

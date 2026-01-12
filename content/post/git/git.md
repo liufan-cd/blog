@@ -1,6 +1,6 @@
 ---
 title: 🐏 Git
-summary: git及其相关
+description: git及其相关
 date: 2025-08-05
 authors:
   - admin

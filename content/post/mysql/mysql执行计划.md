@@ -1,6 +1,6 @@
 ---
 title: 🌞 MySQL执行计划
-summary: 使用MySQL执行计划对sql进行优化
+description: 使用MySQL执行计划对sql进行优化
 date: 2025-08-05
 authors:
   - admin

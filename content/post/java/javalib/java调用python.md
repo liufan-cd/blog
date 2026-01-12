@@ -1,6 +1,6 @@
 ---
 title: 🤕 java调用python
-summary: java软件中嵌入python代码块
+description: java软件中嵌入python代码块
 date: 2025-08-05
 authors:
   - admin

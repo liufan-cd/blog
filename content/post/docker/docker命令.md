@@ -1,6 +1,6 @@
 ---
 title: ⛑ Docker 常用命令整理
-summary: Docker 常用命令整理
+description: Docker 常用命令整理
 date: 2025-08-05
 authors:
   - admin

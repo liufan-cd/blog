@@ -1,9 +1,11 @@
 ---
 title: 👀 java使用modbus库
-summary: java软件中嵌入js代码块
+description: Modbus协议介绍，串口通讯及调试，java使用modbus4j进行协议通讯
 date: 2025-12-25
 authors:
   - admin
+categories:
+    java
 tags:
   - java三方库
 image:

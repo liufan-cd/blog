@@ -1,6 +1,6 @@
 ---
 title: ⛲ JNA
-summary: java本地代码支持开源库
+description: java本地代码支持开源库
 date: 2025-08-05
 authors:
   - admin

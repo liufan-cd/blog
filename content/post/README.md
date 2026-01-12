@@ -1,6 +1,6 @@
 ---
 title: 🥟 README
-summary: README
+description: README
 date: 1971-01-01
 editable: false
 authors:

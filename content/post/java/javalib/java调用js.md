@@ -1,6 +1,6 @@
 ---
 title: 🦚 java调用js
-summary: java软件中嵌入js代码块
+description: java软件中嵌入js代码块
 date: 2025-08-05
 authors:
   - admin

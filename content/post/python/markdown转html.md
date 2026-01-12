@@ -1,6 +1,6 @@
 ---
 title: 🚩 markdown文件解析
-summary: 将markdown文件编译为html并在浏览器中打开
+description: 将markdown文件编译为html并在浏览器中打开
 date: 2025-08-05
 authors:
   - admin

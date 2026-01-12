@@ -1,6 +1,6 @@
 ---
 title: 🚌 PSD文件解析
-summary: ps保存文件psd的二进制信息读取
+description: ps保存文件psd的二进制信息读取
 date: 2025-08-05
 authors:
   - admin

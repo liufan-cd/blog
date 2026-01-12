@@ -1,6 +1,6 @@
 ---
 title: 🧩 linux
-summary: linux常用命令
+description: linux常用命令
 date: 2025-08-05
 authors:
   - admin

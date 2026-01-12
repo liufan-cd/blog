@@ -1,6 +1,6 @@
 ---
 title: 🤞 java调用c以及c++
-summary: java调用c以及c++
+description: java调用c以及c++
 date: 2025-08-05
 authors:
   - admin
