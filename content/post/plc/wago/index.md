@@ -5,14 +5,17 @@ date: 2026-01-21
 authors:
   - admin
 categories:
-    plc
+  - plc
+  - modbus
 tags:
   - wago
-# image:
-#   filename: "Image_1752969385133.jpg"
-#   focal_point: Smart
-#   preview_only: false
-#   alt_text: "随机图片"
+  - modbus
+  - profinet
+image:
+  filename: "Image_1752969385133.jpg"
+  focal_point: Smart
+  preview_only: false
+  alt_text: "随机图片"
 ---
 ## 简介
 需要将万可plc接入采集模块，并将采集数据发送至mqtt，采集模块共三类，PN协议，modbus协议，模拟量采集。

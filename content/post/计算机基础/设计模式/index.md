@@ -1,0 +1,34 @@
+---
+title: 🍔 设计模式
+description: 还没动工，占个坑先~
+date: 2025-08-05
+authors:
+  - admin
+categories:
+  - 计算机基础
+tags:
+  - 计算机基础
+  - 设计模式
+image:
+  filename: "Image_1757402963965.jpg"
+  focal_point: Smart
+  preview_only: false
+  alt_text: "随机图片"
+---
+### 什么是设计模式
+
+### 为什么要使用设计模式
+
+### 常用设计模式
+
+#### 创建型模式
+
+工厂模式
+
+简单
+
+
+
+#### 结构型模式
+
+#### 行为型模式

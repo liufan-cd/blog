@@ -1,0 +1,251 @@
+---
+title: 🧠 常用算法
+description: 个人平时经常使用的算法汇总
+date: 2025-08-05
+authors:
+  - admin
+categories:
+  - 计算机基础
+  - LeetCode
+tags:
+  - 计算机基础
+  - 算法
+  - LeetCode
+image:
+  filename: "Image_1753955931198.jpg"
+  focal_point: Smart
+  preview_only: false
+  alt_text: "随机图片"
+---
+
+# 常用算法
+
+## 概述常用的算法
+
+## 二分查找
+
+**二分查找的前提是必须有序**
+
+将目标域进行二分，根据中点情况进一步判断目标在左半区还是右半区。算法最关键的点为如何确定下一个半区的范围，由于中点靠近左半区还是右半区，比较大小时是否取等，都会影响到区域的迭代，固定中点选择是个比较好的解决这一问题的方法。
+
+我个人比较喜欢如下方式
+
+```java {class="highlight" id="my-codeblock" lineNos=inline tabWidth=2}
+    int left = 0, right = nums.length - 1;
+    int mid;
+
+    while (left < right) {
+        // 防止越界
+        mid = left + ((right - left) >> 1);
+
+        if (num[mid] >= target) {
+            right = mid;
+        } else {
+            // 为什么要+1,是因为当left和right相邻，而目标又是在right上时，这种情况不会缩小选择区域
+            // 实际上，上面的判断就已经排除了mid这个点，我们不应该将这个点继续加入到后续目标域中
+            left = mid + 1;
+        }
+    }
+```
+
+上述代码中的nums并不一定是一个数组，也可以是一个抽象有序的范围，只要我们能通过中点来排除一半的数据，那么就可以通过上述方式解决这个问题。
+
+LeetCode 704.[二分查找](https://leetcode.cn/problems/binary-search/description/) 标准的二分查找。
+LeetCode 162.[寻找峰值](https://leetcode.cn/problems/find-peak-element/description/) 二分查找的变种，即通过中点可以确定查找范围哪个半区一定有解。
+LeetCode 1631.[最小体力消耗路径](https://leetcode.cn/problems/path-with-minimum-effort/description/) 更抽象的二分查找，查找范围不是数组了，中点也不是比较大小
+
+
+## 深度搜索和广度搜索
+
+**深度搜索**
+
+树的先序遍历
+``` java
+    public void dfs(TreeNode node) {
+        if(node == null) {
+           return;
+        }
+
+        dfs(node.left);
+        // do something
+        dfs(node.right);
+    }
+```
+树的层序遍历
+
+```java
+    public void bfs(TreeNode node) {
+        if(node == null) {
+            return;
+        }
+
+        Queue<TreeNode> queue = new LinkedList();
+        queue.addFirst(node);
+        TreeNode current;
+
+        while(queue.size() != 0) {
+            current = queue.pollLast();
+
+            if(current == null) {
+                continue;
+            }
+
+            // do something
+            queue.addFirst(current.left);
+            queue.addFirst(current.right);
+        }
+
+    }
+```
+
+
+## 分治并归
+
+分治法在算法导论中有以下三个步骤：
+
+> 1. 分解（Divide） 将问题划分为一些子问题，子问题形式和原问题一样，只是规模更小。
+> 2. 解决（Conquer）递归求解出子问题，如果子问题规模足够小，则停止递归，直接求解。
+> 3. 合并（Combine）将子问题的解组合成原问题的解。
+
+以并归排序为例，我们该如何将问题分而治之呢？
+
+1. 我们将数组平均分成两份（偶数情况，中点取左半区的右端点），然后对着两个半区进行同样的并归排序。
+2. 考虑到边界情况，当半区长度为0时终止排序，直接返回。
+3. 然后将左半区和右半区，合并成新的有序区域，由于都是有序的，只需要进行顺序遍历合并即可。
+
+参考LeetCode 53.[最大子数组和](https://leetcode.cn/problems/maximum-subarray/description/) 
+
+## 动态规划
+我认为动态规划算是常用算法中最难理解也是最重要的一部分
+
+动态计算同样也是将问题分解成一个子问题，然后将不同的子问题求解出来，然后合并得到原问题的解。逻辑看似和分治法很相似，但实际上它们有着十分细微的差别，即子问题是否有重叠。对于分治法来说，对问题分解之后是得到多个不相干的子问题，但是动态规划来说，当它带入分治法里之后，会反反复复求解一些相同的子问题。
+
+这里以LeetCode 70.[爬楼梯](https://leetcode.cn/problems/climbing-stairs/) 为例。当我们要求爬到第n层时的方法数时，我们可以很好的想到，可以是第n-1层爬一层，或者是n-2层爬两层。那么方法总数f(n) = f(n - 1) + f(n - 2)，我们以一个分治法的思想来考虑这个递推公式，可以写出如下代码
+
+```java
+    public int climbStairs(int n) {
+        if (n == 1 || n == 0) {
+            return 1;
+        }
+
+        return climbStairs(n - 1) + climbStairs(n - 2);
+    }
+```
+
+这段代码运行逻辑完全没有什么问题，但是我们仔细思考一下，对于f(n - 1)来说在计算的时候是需要求解所有小于n - 1的解，而这一个过程在求解n - 2的时候同样也是需要的做的，然后一直重复下去。对于中间的f(m)来说（m < n），会被求解n - m次。
+
+基于上面一段逻辑考虑，我们可以增加一个备忘录或者缓存，当执行完f(n)的求解后，我们把f(n)的值保存下来，解决公共子问题的重复计算问题。上述代码可以优化成下面代码：
+
+```java
+    Map<Integer, Integer> map = new HashMap<>();
+
+    public int climbStairs(int n) {
+        Integer integer = map.get(n);
+
+        if (integer != null) {
+            return integer;
+        }
+
+        if (n == 1 || n == 0) {
+            return 1;
+        }
+
+        int ans = climbStairs(n - 1) + climbStairs(n - 2);
+        map.put(n, ans);
+        return ans;
+    }
+```
+
+我们再继续深入的思考一下，实际上我们自顶向下的进行n的求解，最后都会将所有公共子问题求解一遍，那么我们是不是可以反过来，自底向上求解。我们将所有规模更小的子问题优先求解，保证一定顺序，即当我们求解某个子问题的时候，它所依赖的那些更小的子问题都已经被求解完毕，并且结果已经保存了，这样每个子问题就只需要求解一次。
+
+代码如下：
+```java
+    public int climbStairs(int n) {
+        int[] ways = new int[n + 1];
+
+        ways[0] = 1;
+        ways[1] = 1;
+
+        for (int i = 2; i <= n; i++) {
+            ways[i] = ways[i - 1] + ways[i - 2];
+        }
+
+        return ways[n];
+    }
+```
+
+为了保证计算子问题能够按照顺序、不重复地进行，**动态规划要求已经求解的子问题不受后续阶段的影响**。如果不满足该条件，答案是无法求解的，解决方案是使用不同的更加细致的状态划分子问题。
+
+## 贪心
+每个贪心的背后都有一个更加复杂的动态规划，贪心实际上是将动态规划中的抉择部分使用贪心逻辑跳过了，即每一个子问题的划分和合并都使用最贪心的方式。这个抉择对于一些特殊场景，就是正确的解，所以贪心也是一个有迹可循的算法。
+
+这里举两个例子来说明动态规划和贪心算法的细微区别。
+
+### 01背包
+#### 题目
+> 一共有N件物品，第i件物品的重量为w[i]，价值为v[i]。在总重量不超过上限W的情况下，求能装入背包的最大价值？
+
+动态规划本质是剪枝过后的分治并归，所以我们首先应该考虑如何划分子问题，减小问题规模，直到能够轻松求解出答案，问题规模的减小过程，就是动态规划的状态转移，递推公式就是子问题的转换方式。
+
+这里预设一个简单写法，package(N,W)表示01背包问题的问题规模
+
+对于01背包来说，子问题的划分就是第i件物品是否选取。
+第1件物品选取，问题变成：package(N-1,W-w[i])
+第1件物品不选取，问题变成：package(N-1,W)
+
+我们可以根据这个子问题的划分，得到M * N 个子问题。由于子问题也就是状态由两个变量构成，dp空间也就构成了一个二维数组。实际上也可以通过暴力深度搜索解决问题，但是会重复计算这个dp空间里面的子问题，导致算法复杂度急剧升高。
+
+> 每个子问题就是一个状态，子问题之间的转换就是递推公式。
+> dp[i][j] = Max(dp[i - 1][j], dp[i - 1][j - w[i]] + v[i])
+
+状态转移完全由状态的定义和递推公式决定，动态规划核心是求解当前子问题的时候，所需的子问题都已经求解了，是一种自底向上的算法，所以才会有递推公式这一表现。
+
+这里我们定义子问题为，前i件物品，放大小为j的背包中的最大价值
+
+```java
+    public void dp(int[] weight, int[] value, int bagSize) {
+        int goods = weight.length;
+        int[][] dp = new int[goods][bagSize + 1];
+
+        // 初始化边界条件
+        for (int i = 0; i < bagSize; i++) {
+            dp[0][j] = value[0];
+        }
+
+        for (int i = 1; i < weight.length; i++) {
+            for (int j = 1 ; j < bagSize; j++) {
+                if (j < weight[i]) {
+                    // 背包容量小于当前物品，无法放入
+                    dp[i][j] = dp[i - 1][j];
+                } else {
+                    // 放入和不放入中
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i -1][j - weight[i]] + value[i]);
+                }
+            }
+        }
+
+        // 获取最后子问题的结果
+        return dp[goods -1][bagSize];
+    }
+```
+
+### 01背包变种
+#### 题目
+
+> 一共有N种物品，每种物品为沙状可以拆分为单位重量，第i件物品的重量为w[i]，价值为v[i]。在总重量不超过上限W的情况下，求能装入背包的最大价值？
+
+这里我们也定义子问题为，前i件物品，放大小为j的背包中的最大价值。那么类似的这个背包问题也可以使用动态规划求解，但是考虑到可以拆分，所以可以将前i件物品单位质量展开，即每单位质量看做一个物品。
+
+同样通过第i个单位质量的物品是否选取来划分子问题。
+第1件物品选取，问题变成：package(N-1,W-w[i])
+第1件物品不选取，问题变成：package(N-1,W)
+
+这样我们同样可以规划出一个dp空间，其范围为sum(w[i]) * j的大小。对其进行动态规划计算，同样能算出最终答案。
+
+如果我们对物品按照单位价值进行排序的话，在每一次子问题的划分中，就可以明确确定，第i件物品选取一定比不选取好，进而对算法复杂度进行收敛。
+
+对于于01背包来说，每一次动态规划选取子问题的时候，都需要将子问题都求解出来，需要遍历整个dp空间，但是对于变种来说，子问题能够通过贪心来避免进行抉择，只需要在dp空间中寻找到一个路径即可。就正如前文所说，每个贪心的背后都有一个更加复杂的动态规划，贪心实际上是将动态规划中的抉择部分使用贪心逻辑跳过了，即每一个子问题的划分和合并都使用最贪心的方式。
+
+## 快速幂
+
+## 有限状态机

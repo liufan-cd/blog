@@ -31,6 +31,7 @@
     {{ end }}
 
 {{ else if and (ne .Type nil) (index .Context.Site.Params.defaultImage .Type) }}
+    {{ printf ".Type %s." .Type }}
     <!-- Type arg is set, check for defaultImage setting -->
     {{ $defaultImageSetting := index .Context.Site.Params.defaultImage .Type }}
 

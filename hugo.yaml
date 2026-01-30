@@ -72,6 +72,13 @@ params:
         page:
             - type: toc
 
+    defaultImage:
+        articleList:
+            enabled: true
+            local: true
+            src: media/Image_1752969385133.jpg
+
+
     colorScheme:
         # Display toggle
         toggle: true
