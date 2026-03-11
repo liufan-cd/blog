@@ -1,4 +1,4 @@
-baseurl: http://8.137.104.191:1313/
+baseurl: https://8.137.104.191:1313/
 languageCode: zh-cn
 theme: hugo-theme-stack
 title: Yuan Qi's Blog
