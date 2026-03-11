@@ -8,7 +8,7 @@ tags:
   - python
   - 软件安装
 image:
-  filename: "Image_1753955935276.jpg"
+  filename: "Image_1773221123449_774.jpg"
   focal_point: Smart
   preview_only: false
   alt_text: "随机图片"
